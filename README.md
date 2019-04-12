@@ -17,6 +17,6 @@ I want to write a js library the modern way that means:
 
 ### Commands
 
-`npm start` to begin the development session
-`npm run browser` and go to http://localhost:8080
-`npm run node`
+- `npm start` to begin the development session
+- `npm run browser` and go to http://localhost:8080
+- `npm run node`
