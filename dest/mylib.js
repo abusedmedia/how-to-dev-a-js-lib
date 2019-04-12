@@ -26,6 +26,8 @@
     return Constructor;
   }
 
+  var m = Math.random();
+
   var Mod =
   /*#__PURE__*/
   function () {
@@ -36,7 +38,7 @@
     _createClass(Mod, [{
       key: "method",
       value: function method() {
-        console.log('hey! a method from a module 2!');
+        console.log('hey! a method from a module 2!' + m + '--' + Math.random());
       }
     }]);
 
@@ -44,6 +46,8 @@
   }();
 
   var mod2 = new Mod();
+
+  var m$1 = Math.random();
 
   var Mod$1 =
   /*#__PURE__*/
@@ -55,7 +59,7 @@
     _createClass(Mod, [{
       key: "method",
       value: function method() {
-        console.log('hey! a method from a module 1!');
+        console.log("hey! a method from a module 1!".concat(m$1));
         mod2.method();
       }
     }]);
@@ -84,9 +88,30 @@
 
   var mod3 = new Mod$2();
 
+  var Mod$3 =
+  /*#__PURE__*/
+  function () {
+    function Mod() {
+      _classCallCheck(this, Mod);
+    }
+
+    _createClass(Mod, [{
+      key: "method",
+      value: function method() {
+        console.log('hey! a method from a module 4!');
+        mod2.method();
+      }
+    }]);
+
+    return Mod;
+  }();
+
+  var mod4 = new Mod$3();
+
   var main = {
     mod1: mod1,
-    mod3: mod3
+    mod3: mod3,
+    mod4: mod4
   };
 
   return main;
